@@ -61,11 +61,15 @@ class SinglyLinkedList:
     
 
     def search(self, data):
+        found = False
         for node in self.iter():
             if data == node:
+                found = True
                 print(f"Data {data} found!")
-        
-        
+        if found == False:
+            print(f"Data {data} wasn't found")
+
+
     def clear(self):
         self.tail = None
         self.head = None
