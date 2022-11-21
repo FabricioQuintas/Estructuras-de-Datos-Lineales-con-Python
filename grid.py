@@ -1,4 +1,5 @@
 from array import Array
+import random
 
 
 class Grid: # Representation of a grid
@@ -33,3 +34,14 @@ class Grid: # Representation of a grid
 
         return str(result)
     
+    def random_fill(self, min, max):
+        '''
+        Fill all the array with random numbers between min and max
+        ----
+        min(int) = minimum value
+        max(int) = maximum value
+        '''
+        for row in range(self.get_height()):
+            for col in range(self.get_width()):
+                num = random.randint(min, max)
+                self.data[row][col] = num
