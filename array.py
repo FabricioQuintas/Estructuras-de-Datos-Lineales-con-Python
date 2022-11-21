@@ -1,4 +1,5 @@
-
+import random
+from functools import reduce
 
 class Array: # Represent an array
     def __init__(self, capacity, fill_value=None):
@@ -31,3 +32,20 @@ class Array: # Represent an array
         new_item(any) = new value for the item in the array.
         '''
         self.items[index] = new_item
+
+    def __randomnumbers__(self, lower, upper):
+        '''
+        Receives 2 parameters, and set all array with random numbers between them
+        ----
+        lower(int) = minimum value
+        upper(int) = maximum value
+        '''
+        for i in range(self.capacity - 1):
+            random = random.randint(lower, upper)
+            self.__setitem__(i, random)
+    
+    def __sumitems__(self):
+        '''
+        Sum all items an return the accumulative value
+        '''
+        return reduce(lambda a, b: a + b, self.items)
