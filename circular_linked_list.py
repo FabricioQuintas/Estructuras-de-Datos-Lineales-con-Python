@@ -6,7 +6,6 @@ class CircularLinkedList:
         self.head = None
         self.size = 0
 
-    
     def append(self, data):
         '''
         Insert a new Node
