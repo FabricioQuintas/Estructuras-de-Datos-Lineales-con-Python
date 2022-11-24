@@ -114,7 +114,7 @@ class SinglyLinkedList:
         else: print("Previous node is not present in the list")
             
 
-
+''' TEST
 llist = SinglyLinkedList()
 llist.append("A")
 llist.append("B")
@@ -124,3 +124,4 @@ llist.prepend("E")
 llist.insert_after_node("G", "F")
 
 llist.print_list()
+'''
