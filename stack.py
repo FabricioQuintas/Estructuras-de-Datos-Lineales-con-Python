@@ -54,14 +54,31 @@ class Stack:
     def size(self):
         return str(self.size)
 
+    def print(self):
+        '''
+        Print all data of the stack
+        '''
+        current = self.top
+        size = self.size
+        print(f'We have {size} elements in the stack')
+        while size > 0:
+            print(f'{current.data} is the element in position: {size}')
+            current = current.next
+            size -= 1
+
 
 if __name__ == '__main__':
     quantity = int(input('How many items do you want to add to the stack?: '))
     myStack = Stack()
+
     for i in range(quantity):
         data = input(f'Set a value for the {i+1} item: ')
         myStack.push(data)
+    myStack.print()    
     
-    while myStack.size > 0:
-        print(f'The value {myStack.pop()} has been removed from the stack')
+    print(f'The size of the stack is: {myStack.size}')
+    
+    while myStack.size > 0: # Lets pop all items
         print(f'The last item of the stack is: {myStack.peek()}')
+        print(f'The value {myStack.pop()} has been removed from the stack')
+    
